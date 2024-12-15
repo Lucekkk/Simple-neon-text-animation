@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --color: rgb(149, 0, 255);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+
+        }
+        .text-div{
+            position: relative;
+           
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+           
+        }
+        
+          .text-div span{
+            position: absolute;
+             
+            background: linear-gradient( rgba(149, 0, 255, 0.483) 25%, rgba(149, 0, 255, 0.494) 75%);
+            border-radius: 50%;
+            filter: blur(175px);
+                height: 17vh;
+                width: 14vw; 
+        }
+        .text::selection{
+            background-color: transparent;
+            
+        }
+        .text{
+         pointer-events: none;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 7vw;
+            color: rgb(255, 255, 255);
+           
+             
+            animation: neon-animation 4s infinite alternate;
+        }
+        @keyframes neon-animation{
+            0%{
+                text-shadow: 0 0 15px var(--color);
+                
+            }
+            25%{
+                text-shadow: 0 0 15px var(--color) ;
+            }
+            50%{
+                text-shadow: 0 0 15px var(--color), 0 0 25px var(--color), 0 0 40px var(--color), 0 0 70px var(--color);
+            }
+            75%{
+                text-shadow: 0 0 15px var(--color), 0 0 25px var(--color), 0 0 40px var(--color), 0 0 70px var(--color) ;
+            }
+            100%{
+                text-shadow: 0 0 15px var(--color), 0 0 25px var(--color), 0 0 40px var(--color), 0 0 70px var(--color)  ;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="text-div">
+        <p class="text">text</p>
+        <span></span>
+        <span></span>
+        <span></span>
+         
+    </div>
+</body>
+</html>
